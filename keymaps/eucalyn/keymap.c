@@ -20,13 +20,28 @@
 #define KC_MOUSE MO(_MOUSE)
 #define KC_ARROW MO(_ARROW)
 
+//Tap Dance Declarations
+enum {
+    TD_ALT_GUI = 0,
+    TD_IME
+};
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for Esc, twice for Caps Lock
+  //[TD_ESC_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS)
+  [TD_ALT_GUI]  = ACTION_TAP_DANCE_DOUBLE(KC_LALT, KC_LGUI),
+  [TD_IME] = ACTION_TAP_DANCE_DOUBLE( LCTL(KC_ESC), LCTL(KC_SPC) )
+// Other declarations would go here, separated by commas, if you have them
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_EUCALYN] = LAYOUT( \
           KC_TAB,  KC_Q, KC_W, KC_COMM, KC_DOT, KC_MINUS,       KC_M, KC_Y, KC_K, KC_R, KC_P, KC_BSPC,
           LCTL_T(KC_ESC), KC_A, KC_O, KC_E, KC_I, KC_U,         KC_N, KC_H, KC_J, KC_L, KC_G, KC_ENT,
           KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_F,                KC_S, KC_T, KC_D, KC_B, KC_SLSH, KC_RSFT,
-          LCTL_T(KC_ESC), KC_LGUI, KC_LALT, LT(_MOUSE, LCTL(KC_SPC)), LT(_LOWER, KC_TAB), LT(_LOWER, KC_SPC),    
-                LT(_RAISE, KC_ENT), KC_BSPC, LCTL(KC_ESC), KC_DOWN, KC_UP, KC_RIGHT
+          LCTL_T(KC_ESC), KC_LEFT, KC_DOWN, LT(_MOUSE, LCTL(KC_SPC)), LT(_LOWER, KC_TAB), LT(_LOWER, KC_SPC),    
+                LT(_RAISE, KC_ENT), KC_BSPC, TD(TD_IME), KC_UP, KC_RIGHT, TD(TD_ALT_GUI)
 ),
 
 [_QWERTY] = LAYOUT_kc( \
@@ -71,3 +86,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             ____, ____, ____, ____, ____, ____,    ____, ____, ____, ____, ____, ____
 )
 };
+
+ 
