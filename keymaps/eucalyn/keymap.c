@@ -64,9 +64,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_LOWER] = LAYOUT_kc( \
-            MOUSE, EXLM, AT,   HASH, DLR,  PERC,    CIRC, AMPR, ASTR, LPRN, RPRN, DEL,
+            ARROW, EXLM, AT,   HASH, DLR,  PERC,    CIRC, AMPR, ASTR, LPRN, RPRN, DEL,
             ____,     1,    2,    3,    4,    5,       6,    7,    8,    9,    0, ____,
-            ARROW, ____, ____, ____, ____, ____,    ____, ____, ____, ____, ____, ____,
+            MOUSE, ____, ____, ____, ____, ____,    ____, ____, ____, ____, ____, ____,
             ____,  ____, ____, ____, ____, ____,    ADJUST,END, ____, ____, ____, ____
 ),
 
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             ____, ____, ____, ____, ____, ____,    B_BK, WH_U, MS_U, NO,   ____, ____,
             ____, ____, ____, ____, ____, ____,    MS_L,  MS_L, MS_D, MS_R, ____, ____,
             ____, ____, ____, ____, ____, ____,    MS_BTN1, WH_D, MS_BTN2, ____, ____, ____,
-            ____, ____, ____, ARROW, ____, ____,    MS_BTN1, MS_BTN2, ____, ____, ____, DF2
+            ____, ____, ____, ARROW , ____, ____,    MS_BTN1, MS_BTN2, ____, ____, ____, DF2
 ),
 
 [_ADJUST] = LAYOUT( \
